@@ -32,7 +32,7 @@ void MainWindow::LinkButtonPress()
     QString StringContent(File.readAll());
     File.close();
     ui->EmailList->clear();
-    QRegularExpression Mask("(\\w+@\\w+\\.\\w+)");
+    QRegularExpression Mask("([0-9a-zA-Z]\\w+@[0-9a-z]+\\.[0-9a-z]+)");
     QRegularExpressionMatchIterator It = Mask.globalMatch(StringContent);
     while(It.hasNext())
     {
